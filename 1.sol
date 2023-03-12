@@ -2,18 +2,20 @@
 pragma solidity ^0.8.13;
 
 contract errors {
-    function Require(uint i) public pure {
-        require(i > 10, "Input must be greater than 10");
+    function Require(uint _i,uint _x,uint _j) public pure 
+    {   _j=_i-_x;
+        require(_j > 0, "Input of _i must be greater than 10");
+        
     }
-
-    function Revert(uint i) public pure {
- 
-        if (i < 100) {
-            revert("Input must be greater than 100!");
+    uint z;
+    function Revert(uint i,uint j) public  {
+        z= i+j;
+        if (z < 100) {
+            revert("Input must be higher such that sum is greater than 100");
         }
     }
 
-    uint public num;
+    uint  num;
 
     function Assert() public view {
 
