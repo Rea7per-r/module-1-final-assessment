@@ -16,8 +16,11 @@ contract errors {
     }
 
     uint  num;
+    uint g;
 
-    function Assert() public view {
-
-        assert(num == 0);
+    function Assert(uint b) public view returns(uint) {
+        
+        assert(num > 0);
+        b=g/num;
+        return b;
     }}
